@@ -1,0 +1,151 @@
+@import '../variables';
+
+.button {
+    display: inline-block;
+    background-color: $orange;
+    border-radius: 4px;
+    padding: 10px 20px;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    transition: all $duration ease-in-out;
+    border: 1px solid transparent;
+    @include noselect();
+
+    &,
+    span {
+        color: #fcfcfc;
+    }
+
+    i,
+    span,
+    path,
+    svg {
+        transition: all $duration ease-in-out;
+    }
+
+    &:hover {
+        background-color: $orange;
+    }
+
+    &:active {
+        background-color: darken($orange, 12%);
+        transform: translateY(1px);
+    }
+
+    &--circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        padding: 0;
+        border-width: 2px;
+    }
+
+    &--black {
+        background-color: $black;
+
+        &:hover,
+        &:active {
+            background-color: lighten($color: $black, $amount: 10);
+        }
+    }
+
+    &--add {
+        background-color: $orange;
+        transition: all 0.2s ease-in;
+        border: none;
+
+        &,
+        span {
+            color: #fcfcfc;
+        }
+
+        svg {
+            path {
+                fill: $orange;
+            }
+        }
+
+        &:hover {
+            background-color: rgb(100, 7, 7);
+            &,
+            span {
+                color: #fff;
+            }
+
+            svg {
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+
+        &:active {
+            background-color: darken($orange, 8%);
+        }
+    }
+
+    &__delimiter {
+        width: 1px;
+        height: 25px;
+        background-color: rgba(255, 255, 255, 0.25);
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    &--order {
+        color: #2b2b2b;
+        background: white;
+        border: 1px solid $orange;
+        transition: all 0.2s ease-in;
+
+        > a {
+            margin: 0;
+        }
+
+        svg {
+            margin-right: 2px;
+        }
+
+        span {
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+
+    &--cart {
+        display: flex;
+        align-items: center;
+        line-height: 23px;
+        padding: 8px 16px;
+        transition: all 0.1s ease-in;
+
+        svg {
+            margin-right: 8px;
+            margin-bottom: 1px;
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        &:hover {
+            background-color: #fcfcfc;
+            span {
+                color: #2b2b2b;
+            }
+            .button__delimiter {
+                background-color: #2b2b2b;
+            }
+            svg {
+                path {
+                    stroke: #2b2b2b;
+                }
+            }
+        }
+    }
+}
