@@ -9,8 +9,8 @@ export const Skeleton = () => (
         backgroundColor='#f3f3f3'
         foregroundColor='#ecebeb'
     >
-        <rect x='23' y='476' rx='3' ry='3' width='350' height='45' />
-        <rect x='20' y='410' rx='3' ry='3' width='350' height='45' />
-        <rect x='20' y='40' rx='0' ry='0' width='350' height='350' />
+        <rect x='35' y='480' rx='4' ry='4' width='350' height='45' />
+        <rect x='35' y='410' rx='4' ry='4' width='350' height='45' />
+        <rect x='35' y='40' rx='4' ry='4' width='350' height='350' />
     </ContentLoader>
 );

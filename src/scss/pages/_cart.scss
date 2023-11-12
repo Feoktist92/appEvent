@@ -53,15 +53,16 @@
                 height: 50px;
             }
         }
-
-        &:hover {
-            svg {
-                path {
-                    stroke: darken($color: #b6b6b6, $amount: 50);
+        @media (min-width: 767px) {
+            &:hover {
+                svg {
+                    path {
+                        stroke: darken($color: #b6b6b6, $amount: 50);
+                    }
                 }
-            }
-            span {
-                color: darken($color: #b6b6b6, $amount: 50);
+                span {
+                    color: darken($color: #b6b6b6, $amount: 50);
+                }
             }
         }
     }
@@ -116,18 +117,22 @@
                     font-weight: 500;
                     font-weight: 600;
                 }
+                @media (min-width: 767px) {
+                    &:hover {
+                        background-color: darken(
+                            $color: $gray-line,
+                            $amount: 90
+                        );
+                        border-color: darken($color: $gray-line, $amount: 90);
 
-                &:hover {
-                    background-color: darken($color: $gray-line, $amount: 90);
-                    border-color: darken($color: $gray-line, $amount: 90);
+                        span {
+                            color: $gray-line;
+                        }
 
-                    span {
-                        color: $gray-line;
-                    }
-
-                    svg {
-                        path {
-                            stroke: #fcfcfc;
+                        svg {
+                            path {
+                                stroke: #fcfcfc;
+                            }
                         }
                     }
                 }
@@ -147,8 +152,10 @@
                 width: 210px;
                 padding: 16px;
 
-                &:hover {
-                    background-color: rgb(100, 7, 7);
+                @media (min-width: 767px) {
+                    &:hover {
+                        background-color: rgb(100, 7, 7);
+                    }
                 }
             }
         }

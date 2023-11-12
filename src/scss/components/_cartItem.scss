@@ -119,7 +119,13 @@
                 height: 11.5px;
                 position: relative;
             }
-            &:hover,
+            @media (min-width: 767px) {
+                &:hover {
+                    border-color: darken($color: $gray-line, $amount: 80);
+                    background-color: darken($color: $gray-line, $amount: 80);
+                }
+            }
+
             &:active {
                 border-color: darken($color: $gray-line, $amount: 80);
                 background-color: darken($color: $gray-line, $amount: 80);

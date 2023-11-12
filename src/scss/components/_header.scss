@@ -20,8 +20,11 @@
         font-size: 20px;
         text-transform: uppercase;
         font-weight: 500;
-        &:hover {
-            color: #e87f8a;
+
+        @media (min-width: 767px) {
+            &:hover {
+                color: #e87f8a;
+            }
         }
     }
 }
