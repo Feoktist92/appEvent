@@ -1,13 +1,10 @@
 import React, { Suspense, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { clearProducts, selectCart } from '../redux/slices/cartSlice';
-import { CartItem } from '../components/CartItem';
-import { Cartempty } from '../components/Cartempty';
-
-import { Modal } from '../components/Modal';
-import { Loader } from '../components';
 import { useAppDispatch } from '../redux/store';
+import { Link } from 'react-router-dom';
+
+import { clearProducts, selectCart } from '../redux/slices/cartSlice';
+import { CartItem, Cartempty, Modal, Loader } from '../components';
 
 const Cart: React.FC = () => {
     const dispatch = useAppDispatch();

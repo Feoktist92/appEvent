@@ -31,18 +31,14 @@ const cartSlice = createSlice({
     reducers: {
         addProduct: (state, action: PayloadAction<CartItem>) => {
             const findItem = findProduct(state, action);
-
             if (findItem) {
-                // The item is already in the cart, increment its count.
                 findItem.count = 1;
             } else {
-                // The item is not in the cart, add it.
                 state.products.push({
                     ...action.payload,
                     count: 1,
                 });
             }
-
             state.totalPrice += action.payload.price;
         },
         removeProduct: (state, action: PayloadAction<CartItem>) => {

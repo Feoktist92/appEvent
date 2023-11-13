@@ -1,7 +1,7 @@
 .cart__item {
     display: flex;
     width: 100%;
-    border-top: 1px solid $gray-line;
+    border-top: 1px solid $white-line;
     padding-top: 30px;
     margin-top: 30px;
     justify-content: space-between;
@@ -121,14 +121,14 @@
             }
             @media (min-width: 767px) {
                 &:hover {
-                    border-color: darken($color: $gray-line, $amount: 80);
-                    background-color: darken($color: $gray-line, $amount: 80);
+                    border-color: darken($color: $white-line, $amount: 80);
+                    background-color: darken($color: $white-line, $amount: 80);
                 }
             }
 
             &:active {
-                border-color: darken($color: $gray-line, $amount: 80);
-                background-color: darken($color: $gray-line, $amount: 80);
+                border-color: darken($color: $white-line, $amount: 80);
+                background-color: darken($color: $white-line, $amount: 80);
             }
         }
     }

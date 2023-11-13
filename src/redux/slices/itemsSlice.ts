@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
-export const fetchProducts = createAsyncThunk(
+export const fetchProducts = createAsyncThunk<Item[], undefined>(
     'products/fetchProducts',
     async () => {
         const response = await axios.get(
@@ -46,13 +46,10 @@ const itemsSlice = createSlice({
                 state.status = Status.LOADING;
                 state.items = [];
             })
-            .addCase(
-                fetchProducts.fulfilled,
-                (state, action: PayloadAction<Item[]>) => {
-                    state.status = Status.RECEIVED;
-                    state.items = action.payload;
-                }
-            )
+            .addCase(fetchProducts.fulfilled, (state, action) => {
+                state.status = Status.RECEIVED;
+                state.items = action.payload;
+            })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = Status.ERROR;
                 state.items = [];

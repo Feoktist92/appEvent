@@ -110,7 +110,7 @@
                     order: 2;
                 }
 
-                border-color: darken($color: $gray-line, $amount: 10);
+                border-color: darken($color: $white-line, $amount: 10);
 
                 span {
                     color: #3d2a2a;
@@ -120,13 +120,13 @@
                 @media (min-width: 767px) {
                     &:hover {
                         background-color: darken(
-                            $color: $gray-line,
+                            $color: $white-line,
                             $amount: 90
                         );
-                        border-color: darken($color: $gray-line, $amount: 90);
+                        border-color: darken($color: $white-line, $amount: 90);
 
                         span {
-                            color: $gray-line;
+                            color: $white-line;
                         }
 
                         svg {

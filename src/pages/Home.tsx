@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
-import { fetchProducts, selectItems } from '../redux/slices/itemsSlice';
 import { useAppDispatch } from '../redux/store';
+import { fetchProducts, selectItems } from '../redux/slices/itemsSlice';
 
 import { ItemBlock, Skeleton, LoadingError } from '../components';
 

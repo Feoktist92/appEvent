@@ -6,3 +6,4 @@ export * from './Cartempty';
 export * from './NotFoundBlock';
 export * from './Loader';
 export * from './LoadingError';
+export * from './Modal';
