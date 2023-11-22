@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../redux/store';
 import { Link } from 'react-router-dom';
 
-import { clearProducts, selectCart } from '../redux/slices/cartSlice';
+import { CartProduct, clearProducts, selectCart } from '../redux/slices/cartSlice';
 import { CartItem, Cartempty, Modal, Loader } from '../components';
 
 const Cart: React.FC = () => {
@@ -105,11 +105,11 @@ const Cart: React.FC = () => {
                 </div>
                 <div className='content__items'>
                     {products.map(
-                        (product: any) =>
+                        (product: CartProduct) =>
                             product.count > 0 && (
                                 <CartItem
                                     {...product}
-                                    key={`${product.id}_${product.type}_${product.size}`}
+                                    key={product.id}
                                 />
                             )
                     )}

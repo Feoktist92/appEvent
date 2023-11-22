@@ -3,7 +3,7 @@ import { RootState } from '../store';
 import { getCartfromLS } from '../../utils/getCartfromLS';
 import { calcTotalPrice } from '../../utils/calcTotalPrice';
 
-export type CartItem = {
+export type CartProduct = {
     id: number;
     name: string;
     image: string;
@@ -12,7 +12,7 @@ export type CartItem = {
 };
 interface CartSliceState {
     totalPrice: number;
-    products: CartItem[];
+    products: CartProduct[];
 }
 
 const { products, totalPrice } = getCartfromLS();
@@ -22,14 +22,14 @@ const initialState: CartSliceState = {
     products,
 };
 
-const findProduct = (state: CartSliceState, action: { payload: CartItem }) =>
+const findProduct = (state: CartSliceState, action: { payload: CartProduct }) =>
     state.products.find((obj) => obj.id === action.payload.id);
 
 const cartSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers: {
-        addProduct: (state, action: PayloadAction<CartItem>) => {
+        addProduct: (state, action: PayloadAction<CartProduct>) => {
             const findItem = findProduct(state, action);
             if (findItem) {
                 findItem.count = 1;
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
             }
             state.totalPrice += action.payload.price;
         },
-        removeProduct: (state, action: PayloadAction<CartItem>) => {
+        removeProduct: (state, action: PayloadAction<CartProduct>) => {
             const findItem = findProduct(state, action);
             if (findItem) {
                 findItem.count = 0;
